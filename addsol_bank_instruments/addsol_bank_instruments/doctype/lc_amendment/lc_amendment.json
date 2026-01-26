@@ -1,0 +1,227 @@
+{
+ "actions": [],
+ "autoname": "format:AMD-{letter_of_credit}-{####}",
+ "creation": "2024-01-20 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "letter_of_credit",
+  "amendment_number",
+  "column_break_1",
+  "amendment_date",
+  "amendment_type",
+  "section_break_2",
+  "previous_lc_amount",
+  "new_lc_amount",
+  "amount_change",
+  "column_break_3",
+  "previous_expiry_date",
+  "new_expiry_date",
+  "column_break_4",
+  "previous_shipment_date",
+  "new_shipment_date",
+  "section_break_5",
+  "reason_for_amendment",
+  "amendment_details",
+  "section_break_6",
+  "amendment_charge",
+  "payment_entry",
+  "column_break_7",
+  "bank_reference",
+  "status",
+  "section_break_8",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "letter_of_credit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Letter of Credit",
+   "options": "Letter of Credit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amendment_number",
+   "fieldtype": "Int",
+   "label": "Amendment Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amendment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Amendment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amendment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Amendment Type",
+   "options": "\nAmount Increase\nAmount Decrease\nDate Extension\nTerms Change\nDocument Change\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Amendment Details"
+  },
+  {
+   "fieldname": "previous_lc_amount",
+   "fieldtype": "Currency",
+   "label": "Previous LC Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_lc_amount",
+   "fieldtype": "Currency",
+   "label": "New LC Amount"
+  },
+  {
+   "fieldname": "amount_change",
+   "fieldtype": "Currency",
+   "label": "Amount Change",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "previous_expiry_date",
+   "fieldtype": "Date",
+   "label": "Previous Expiry Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_expiry_date",
+   "fieldtype": "Date",
+   "label": "New Expiry Date"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "previous_shipment_date",
+   "fieldtype": "Date",
+   "label": "Previous Shipment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "new_shipment_date",
+   "fieldtype": "Date",
+   "label": "New Shipment Date"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Reason & Details"
+  },
+  {
+   "fieldname": "reason_for_amendment",
+   "fieldtype": "Select",
+   "label": "Reason for Amendment",
+   "options": "\nDelay in Shipment\nIncrease in Order Quantity\nDecrease in Order Quantity\nChange in Terms\nChange in Documents\nBuyer Request\nSupplier Request\nOther"
+  },
+  {
+   "fieldname": "amendment_details",
+   "fieldtype": "Text Editor",
+   "label": "Amendment Details"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Charges & References"
+  },
+  {
+   "fieldname": "amendment_charge",
+   "fieldtype": "Currency",
+   "label": "Amendment Charge"
+  },
+  {
+   "fieldname": "payment_entry",
+   "fieldtype": "Link",
+   "label": "Payment Entry",
+   "options": "Payment Entry"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bank_reference",
+   "fieldtype": "Data",
+   "label": "Bank Reference Number"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nSubmitted\nApproved\nRejected\nCancelled",
+   "default": "Draft"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "LC Amendment",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-01-20 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Addsol Bank Instruments",
+ "name": "LC Amendment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1,
+   "amend": 1,
+   "cancel": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

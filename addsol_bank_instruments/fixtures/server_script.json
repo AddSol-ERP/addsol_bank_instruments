@@ -1,0 +1,11 @@
+[
+  {
+    "doctype": "Server Script",
+    "name": "Bank Guarantee - Disabled",
+    "script_type": "DocType Event",
+    "reference_doctype": "Bank Guarantee",
+    "event": "before_insert",
+    "script": "frappe.throw('Standard Bank Guarantee is disabled. Use AddSol Bank Instruments module instead.')",
+    "enabled": 1
+  }
+]

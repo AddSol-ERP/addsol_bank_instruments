@@ -1,0 +1,324 @@
+{
+  "name": "BG Management",
+  "module": "Addsol Bank Instruments",
+  "app": "addsol_bank_instruments",
+  "doctype": "DocType",
+  "is_submittable": 1,
+  "track_changes": 1,
+  "naming_rule": "By fieldname",
+  "autoname": "field:bg_number",
+  "title_field": "bg_number",
+  "fields": [
+    {
+      "fieldname": "basic_details_section",
+      "fieldtype": "Section Break",
+      "label": "Basic Details"
+    },
+    {
+      "fieldname": "bg_number",
+      "fieldtype": "Data",
+      "label": "BG Number",
+      "unique": 1,
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "set_only_once": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "bg_type",
+      "fieldtype": "Select",
+      "label": "Type of BG",
+      "options": "Performance Bank Guarantee\nBid Bond Guarantee\nAdvance Payment Guarantee\nRetention Money Guarantee\nFinancial Guarantee\nPayment Guarantee\nWarranty Guarantee",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nExpired\nClaimed\nExtended\nClosed\nCancelled",
+      "default": "Active",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "party_details_section",
+      "fieldtype": "Section Break",
+      "label": "Party Details"
+    },
+    {
+      "fieldname": "beneficiary_type",
+      "fieldtype": "Select",
+      "label": "Beneficiary Type",
+      "options": "Customer\nSupplier\nCompany"
+    },
+    {
+      "fieldname": "beneficiary",
+      "fieldtype": "Dynamic Link",
+      "label": "Beneficiary",
+      "options": "beneficiary_type",
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "beneficiary_name",
+      "fieldtype": "Data",
+      "label": "Beneficiary Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "applicant",
+      "fieldtype": "Link",
+      "label": "Applicant (Company)",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "purchase_order",
+      "fieldtype": "Link",
+      "label": "Purchase Order",
+      "options": "Purchase Order",
+      "depends_on": "eval:doc.beneficiary_type != 'Customer'"
+    },
+    {
+      "fieldname": "sales_order",
+      "fieldtype": "Link",
+      "label": "Sales Order",
+      "options": "Sales Order",
+      "depends_on": "eval:doc.beneficiary_type != 'Supplier'"
+    },
+    {
+      "fieldname": "project",
+      "fieldtype": "Link",
+      "label": "Project",
+      "options": "Project"
+    },
+    {
+      "fieldname": "financial_details_section",
+      "fieldtype": "Section Break",
+      "label": "Financial Details"
+    },
+    {
+      "fieldname": "bank",
+      "fieldtype": "Link",
+      "label": "Issuing Bank",
+      "options": "Bank",
+      "reqd": 1
+    },
+    {
+      "fieldname": "bank_account",
+      "fieldtype": "Link",
+      "label": "Bank Account",
+      "options": "Bank Account"
+    },
+    {
+      "fieldname": "fd_maturity_date",
+      "fieldtype": "Date",
+      "label": "FD Maturity Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "days_to_expiry",
+      "fieldtype": "Int",
+      "label": "Days to Expiry",
+      "read_only": 1
+    },
+      {
+      "fieldname": "issue_date",
+      "fieldtype": "Date",
+      "label": "BG Issue Date",
+      "reqd": 1,
+      "default": "Today"
+    },
+    {
+      "fieldname": "expiry_date",
+      "fieldtype": "Date",
+      "label": "BG Expiry Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "fd_number",
+      "fieldtype": "Data",
+      "label": "FD No.",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "fd_amount",
+      "fieldtype": "Currency",
+      "label": "FD Amount",
+      "precision": 2,
+      "reqd": 1
+    },
+    {
+      "fieldname": "maturity_amount",
+      "fieldtype": "Currency",
+      "label": "Maturity Amount",
+      "precision": 2,
+      "reqd": 1
+    },
+    {
+      "fieldname": "utilized_amount",
+      "fieldtype": "Currency",
+      "label": "Utilized Amount",
+      "precision": 2,
+      "default": 0
+    },
+    {
+      "fieldname": "available_amount",
+      "fieldtype": "Currency",
+      "label": "Available Amount",
+      "precision": 2,
+      "read_only": 1
+    },
+    {
+      "fieldname": "claim_date",
+      "fieldtype": "Date",
+      "label": "BG Claim Date"
+    },
+    {
+      "fieldname": "extension_details_section",
+      "fieldtype": "Section Break",
+      "label": "Extension Details",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "is_extended",
+      "fieldtype": "Check",
+      "label": "Is Extended",
+      "default": 0
+    },
+    {
+      "fieldname": "extension_expiry_date",
+      "fieldtype": "Date",
+      "label": "Extension Expiry Date",
+      "depends_on": "eval:doc.is_extended==1"
+    },
+    {
+      "fieldname": "extension_claim_date",
+      "fieldtype": "Date",
+      "label": "Extension Claim Date",
+      "depends_on": "eval:doc.is_extended==1"
+    },
+    {
+      "fieldname": "extension_history",
+      "fieldtype": "Table",
+      "label": "Extension History",
+      "options": "BG Management Extension",
+      "depends_on": "eval:doc.is_extended==1"
+    },
+    {
+      "fieldname": "charges_section",
+      "fieldtype": "Section Break",
+      "label": "Charges & Commission"
+    },
+    {
+      "fieldname": "commission_rate",
+      "fieldtype": "Percent",
+      "label": "Commission Rate (%)"
+    },
+    {
+      "fieldname": "commission_amount",
+      "fieldtype": "Currency",
+      "label": "Commission Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_5",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "processing_charges",
+      "fieldtype": "Currency",
+      "label": "Processing Charges"
+    },
+    {
+      "fieldname": "total_charges",
+      "fieldtype": "Currency",
+      "label": "Total Charges",
+      "read_only": 1
+    },
+    {
+      "fieldname": "documents_section",
+      "fieldtype": "Section Break",
+      "label": "Documents & Attachments"
+    },
+    {
+      "fieldname": "bg_document",
+      "fieldtype": "Attach",
+      "label": "BG Document"
+    },
+    {
+      "fieldname": "fd_receipt",
+      "fieldtype": "Attach",
+      "label": "FD Receipt"
+    },
+    {
+      "fieldname": "column_break_6",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "supporting_documents",
+      "fieldtype": "Table",
+      "label": "Supporting Documents",
+      "options": "BG Management Document"
+    },
+    {
+      "fieldname": "remarks_section",
+      "fieldtype": "Section Break",
+      "label": "Remarks"
+    },
+    {
+      "fieldname": "remarks",
+      "fieldtype": "Text Editor",
+      "label": "Remarks"
+    },
+    {
+      "fieldname": "internal_notes",
+      "fieldtype": "Text",
+      "label": "Internal Notes"
+    },
+    {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "options": "BG Management",
+      "read_only": 1,
+      "no_copy": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 1
+    },
+    {
+      "role": "Accounts User",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "submit": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "search_fields": "bg_number,beneficiary,bg_type,status"
+}

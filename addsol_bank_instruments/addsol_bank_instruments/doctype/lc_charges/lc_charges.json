@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "creation": "2024-01-20 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "charge_type",
+  "charge_date",
+  "column_break_1",
+  "amount",
+  "currency",
+  "column_break_2",
+  "payment_entry",
+  "journal_entry",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "charge_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Charge Type",
+   "options": "\nLC Opening Charge\nLC Amendment Charge\nLC Advising Charge\nLC Confirmation Charge\nNegotiation Charge\nAcceptance Charge\nDiscounting Charge\nCourier Charge\nSWIFT Charge\nDocument Handling Charge\nInsurance Charge\nPort Charge\nCustoms Duty\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "charge_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Charge Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_entry",
+   "fieldtype": "Link",
+   "label": "Payment Entry",
+   "options": "Payment Entry"
+  },
+  {
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "Journal Entry",
+   "options": "Journal Entry"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-20 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Addsol Bank Instruments",
+ "name": "LC Charges",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,98 @@
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px;">
+        <h2 style="color: #2c3e50; margin-bottom: 20px;">
+            🏦 Bank Guarantee Notification
+        </h2>
+        
+        <p style="color: #34495e; line-height: 1.6;">
+            A new Bank Guarantee has been submitted with the following details:
+        </p>
+        
+        <div style="background-color: white; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #3498db;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50; width: 40%;">BG Number:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.bg_number }}</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">BG Type:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.bg_type }}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Applicant:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.applicant }}</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Beneficiary:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.beneficiary_name }}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">FD Amount:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ frappe.format(doc.fd_amount, {'fieldtype': 'Currency'}) }}</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Maturity Amount:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ frappe.format(doc.maturity_amount, {'fieldtype': 'Currency'}) }}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Issuing Bank:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.bank }}</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Issue Date:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.get_formatted('issue_date') }}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Expiry Date:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.get_formatted('expiry_date') }}</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Status:</td>
+                    <td style="padding: 8px; color: #34495e;">
+                        <span style="background-color: #27ae60; color: white; padding: 4px 8px; border-radius: 3px; font-size: 12px;">
+                            {{ doc.status }}
+                        </span>
+                    </td>
+                </tr>
+                {% if doc.project %}
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Project:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.project }}</td>
+                </tr>
+                {% endif %}
+                {% if doc.sales_order %}
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Sales Order:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.sales_order }}</td>
+                </tr>
+                {% endif %}
+                {% if doc.purchase_order %}
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Purchase Order:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.purchase_order }}</td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+        
+        {% if doc.days_to_expiry is defined and doc.days_to_expiry <= 30 %}
+        <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 12px; border-radius: 5px; margin: 15px 0;">
+            <p style="color: #856404; margin: 0; font-weight: bold;">
+                ⚠️ <strong>Important:</strong> This BG expires in {{ doc.days_to_expiry }} days!
+            </p>
+        </div>
+        {% endif %}
+        
+        <div style="text-align: center; margin-top: 25px;">
+            <a href="{{ frappe.utils.get_url_to_form('BG Management', doc.name) }}" 
+               style="background-color: #3498db; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                View Bank Guarantee
+            </a>
+        </div>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: #7f8c8d; font-size: 12px;">
+            <p>This is an automated notification from the Bank Instruments Management System.</p>
+            <p>If you have any questions, please contact the Finance Department.</p>
+        </div>
+    </div>
+</div>

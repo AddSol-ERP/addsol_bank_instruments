@@ -1,0 +1,104 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2024-01-20 12:00:00.000000",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "label": "Transaction Type",
+   "mandatory": 0,
+   "options": "\nImport\nExport",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "lc_type",
+   "fieldtype": "Select",
+   "label": "LC Type",
+   "mandatory": 0,
+   "options": "\nSight LC\nUsance LC\nDeferred Payment LC\nRevolving LC\nTransferable LC\nBack-to-Back LC\nStandby LC",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "mandatory": 0,
+   "options": "\nDraft\nOpened\nAmended\nDocuments Submitted\nDocuments Accepted\nPayment Made\nSettled\nCancelled\nExpired",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "mandatory": 0,
+   "options": "Currency",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "issuing_bank",
+   "fieldtype": "Data",
+   "label": "Issuing Bank",
+   "mandatory": 0,
+   "wildcard_filter": 1
+  },
+  {
+   "fieldname": "applicant",
+   "fieldtype": "Data",
+   "label": "Applicant",
+   "mandatory": 0,
+   "wildcard_filter": 1
+  },
+  {
+   "fieldname": "beneficiary",
+   "fieldtype": "Data",
+   "label": "Beneficiary",
+   "mandatory": 0,
+   "wildcard_filter": 1
+  }
+ ],
+ "is_standard": "Yes",
+ "json": "{}",
+ "letter_head": "",
+ "modified": "2024-01-20 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Addsol Bank Instruments",
+ "name": "LC Register",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Letter of Credit",
+ "report_name": "LC Register",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Purchase Manager"
+  },
+  {
+   "role": "Sales Manager"
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "creation": "2024-01-20 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "shipment_date",
+  "bl_awb_number",
+  "delivery_note",
+  "column_break_1",
+  "shipped_quantity",
+  "shipped_value",
+  "column_break_2",
+  "vessel_name",
+  "container_number",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "shipment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Shipment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bl_awb_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "B/L or AWB Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Link",
+   "label": "Delivery Note",
+   "options": "Delivery Note"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipped_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Shipped Quantity"
+  },
+  {
+   "fieldname": "shipped_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Shipped Value",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vessel_name",
+   "fieldtype": "Data",
+   "label": "Vessel/Flight Name"
+  },
+  {
+   "fieldname": "container_number",
+   "fieldtype": "Data",
+   "label": "Container Number"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-20 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Addsol Bank Instruments",
+ "name": "LC Shipment",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

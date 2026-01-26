@@ -84,6 +84,8 @@ app_license = "mit"
 
 # before_install = "addsol_bank_instruments.install.before_install"
 # after_install = "addsol_bank_instruments.install.after_install"
+after_install = "addsol_bank_instruments.setup.disable_core_bg.after_install"
+
 
 # Uninstallation
 # ------------
@@ -111,7 +113,7 @@ app_license = "mit"
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "addsol_bank_instruments.notifications.get_notification_config"
+notification_config = "addsol_bank_instruments.notifications.get_notification_config"
 
 # Permissions
 # -----------
@@ -137,13 +139,14 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+# Document Events
+doc_events = {
+    "BG Management": {
+        "validate": "addsol_bank_instruments.addsol_bank_instruments.doctype.bg_management.bg_management.validate_bg",
+        "on_submit": "addsol_bank_instruments.addsol_bank_instruments.doctype.bg_management.bg_management.on_bg_submit",
+        "on_cancel": "addsol_bank_instruments.addsol_bank_instruments.doctype.bg_management.bg_management.on_bg_cancel",
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -242,3 +245,38 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+# Notification Configuration
+# Add email notifications for BG Management events
+
+# Report Configuration
+standard_queries = {
+    "BG Management": "addsol_bank_instruments.addsol_bank_instruments.doctype.bg_management.bg_management.get_dashboard_data"
+}
+
+scheduler_events = {
+    "daily": [
+        "addsol_bank_instruments.addsol_bank_instruments.doctype.bg_management.bg_management.send_expiry_notifications",
+        "addsol_bank_instruments.addsol_bank_instruments.doctype.letter_of_credit.letter_of_credit.send_lc_expiry_notifications"
+    ]
+}
+
+# Permission Query Handlers
+permission_query_conditions = {
+    "BG Management": "addsol_bank_instruments.addsol_bank_instruments.doctype.bg_management.bg_management.get_permission_query_conditions",
+}
+
+has_permission = {
+    "BG Management": "addsol_bank_instruments.addsol_bank_instruments.doctype.bg_management.bg_management.has_permission",
+}
+
+fixtures = [
+    {
+        "dt": "Workspace",
+        "filters": {
+            "name": "Bank Instruments"
+        }
+    },
+    {
+        "dt": "Web Page"
+    }
+]

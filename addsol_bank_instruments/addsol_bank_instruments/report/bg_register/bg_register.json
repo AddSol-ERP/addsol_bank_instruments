@@ -1,0 +1,74 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2026-01-26 12:00:00.000000",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "bg_type",
+   "fieldtype": "Select",
+   "label": "BG Type",
+   "mandatory": 0,
+   "options": "Performance Bank Guarantee\nBid Bond Guarantee\nAdvance Payment Guarantee\nRetention Money Guarantee\nFinancial Guarantee\nPayment Guarantee\nWarranty Guarantee",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "mandatory": 0,
+   "options": "\nActive\nExpired\nClaimed\nExtended\nClosed\nCancelled",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Data",
+   "label": "Issuing Bank",
+   "mandatory": 0,
+   "wildcard_filter": 1
+  }
+ ],
+ "is_standard": "Yes",
+ "json": "{}",
+ "letter_head": "",
+ "modified": "2026-01-26 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Addsol Bank Instruments",
+ "name": "BG Register",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "BG Management",
+ "report_name": "BG Register",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Purchase Manager"
+  },
+  {
+   "role": "Sales Manager"
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "doctype": "Client Script",
+    "name": "Bank Guarantee - Disabled",
+    "dt": "Bank Guarantee",
+    "script_type": "Form",
+    "script": "frappe.ui.form.on('Bank Guarantee', { onload(frm) { frappe.msgprint(__('Standard Bank Guarantee is disabled. Please use AddSol Bank Instruments module -> BG Management')); frappe.set_route('desk'); } });",
+    "enabled": 1
+  }
+]

@@ -1,0 +1,70 @@
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+    <div style="background-color: #fff3cd; padding: 20px; border-radius: 8px; border-left: 4px solid #ffc107;">
+        <h2 style="color: #856404; margin-bottom: 20px;">
+            ⚠️ Bank Guarantee Expiry Alert
+        </h2>
+        
+        <p style="color: #856404; line-height: 1.6;">
+            <strong>Important:</strong> The following Bank Guarantee is expiring soon and requires your attention:
+        </p>
+        
+        <div style="background-color: white; padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #dc3545;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50; width: 40%;">BG Number:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.bg_number }}</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">BG Type:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.bg_type }}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Beneficiary:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ doc.beneficiary_name }}</td>
+                </tr>
+                <tr style="background-color: #f8f9fa;">
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">FD Amount:</td>
+                    <td style="padding: 8px; color: #34495e;">{{ frappe.format(doc.fd_amount, {'fieldtype': 'Currency'}) }}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; font-weight: bold; color: #2c3e50;">Expiry Date:</td>
+                    <td style="padding: 8px; color: #dc3545; font-weight: bold;">
+                        {{ doc.get_formatted('extension_expiry_date' if doc.is_extended else 'expiry_date') }}
+                    </td>
+                </tr>
+                <tr style="background-color: #fff3cd;">
+                    <td style="padding: 8px; font-weight: bold; color: #856404;">Days Remaining:</td>
+                    <td style="padding: 8px; color: #dc3545; font-weight: bold; font-size: 16px;">
+                        {{ days_remaining }} days
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        {% if days_remaining <= 7 %}
+        <div style="background-color: #f8d7da; border: 1px solid #f5c6cb; padding: 12px; border-radius: 5px; margin: 15px 0;">
+            <p style="color: #721c24; margin: 0; font-weight: bold;">
+                🚨 <strong>URGENT:</strong> This BG expires in {{ days_remaining }} days! Immediate action required.
+            </p>
+        </div>
+        {% elif days_remaining <= 15 %}
+        <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 12px; border-radius: 5px; margin: 15px 0;">
+            <p style="color: #856404; margin: 0; font-weight: bold;">
+                ⏰ <strong>Attention:</strong> This BG expires in {{ days_remaining }} days. Please plan accordingly.
+            </p>
+        </div>
+        {% endif %}
+        
+        <div style="text-align: center; margin-top: 25px;">
+            <a href="{{ frappe.utils.get_url_to_form('BG Management', doc.name) }}" 
+               style="background-color: #dc3545; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                Review Bank Guarantee
+            </a>
+        </div>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; text-align: center; color: #7f8c8d; font-size: 12px;">
+            <p>This is an automated expiry alert from the Bank Instruments Management System.</p>
+            <p>Please contact the Finance Department for any questions or assistance.</p>
+        </div>
+    </div>
+</div>
