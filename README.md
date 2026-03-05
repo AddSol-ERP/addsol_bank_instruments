@@ -6,6 +6,8 @@ A comprehensive ERPNext application for managing the complete lifecycle of Bank 
 
 The **Bank Instruments Management App** (`addsol_bank_instruments`) is designed for import-export companies, banks, trading houses, and manufacturing businesses that deal with international trade and financial instruments. It provides end-to-end management of both Import and Export LCs, as well as various types of Bank Guarantees, supporting multiple instrument types with comprehensive tracking and automation.
 
+![Bank Instruments Management](addsol_bank_instruments/documentation/images/addsol_bankinstruments.png)
+
 ### **Letter of Credit (LC) Module**
 
 **Key capabilities include:**
@@ -75,18 +77,18 @@ The **Bank Instruments Management App** (`addsol_bank_instruments`) is designed 
 ## Documentation
 
 ### **Letter of Credit Documentation**
-- **[LC Quick Start Guide](addsol_bank_instruments/documentation/lc_quick_start.md)** - Get up and running in 5 minutes
-- **[LC App Features](addsol_bank_instruments/documentation/lc_app_features.md)** - Comprehensive feature list and capabilities
-- **[LC User Manual](addsol_bank_instruments/documentation/lc_user_manual.md)** - Complete user guide with detailed instructions
+- **[LC Quick Start Guide](addsol_bank_instruments/documentation/lc/lc_quick_start.md)** - Get up and running in 5 minutes
+- **[LC App Features](addsol_bank_instruments/documentation/lc/lc_app_features.md)** - Comprehensive feature list and capabilities
+- **[LC User Manual](addsol_bank_instruments/documentation/lc/lc_user_manual.md)** - Complete user guide with detailed instructions
 
 ### **Bank Guarantee Documentation**
-- **[BG Quick Start Guide](addsol_bank_instruments/documentation/bg_quick_start_guide.md)** - Get up and running in 5 minutes
-- **[BG App Features](addsol_bank_instruments/documentation/bg_features.md)** - Comprehensive feature list and capabilities
-- **[BG User Manual](addsol_bank_instruments/documentation/bg_user_manual.md)** - Complete user guide with detailed instructions
+- **[BG Quick Start Guide](addsol_bank_instruments/documentation/bg/bg_quick_start_guide.md)** - Get up and running in 5 minutes
+- **[BG App Features](addsol_bank_instruments/documentation/bg/bg_features.md)** - Comprehensive feature list and capabilities
+- **[BG User Manual](addsol_bank_instruments/documentation/bg/bg_user_manual.md)** - Complete user guide with detailed instructions
 
 ### **Reports Documentation**
-- **[LC Reports Guide](addsol_bank_instruments/documentation/lc_reports.md)** - Understanding LC reports and analytics
-- **[BG Reports Guide](addsol_bank_instruments/documentation/bg_reports.md)** - Understanding BG reports and analytics
+- **[LC Reports Guide](addsol_bank_instruments/documentation/lc/lc_reports.md)** - Understanding LC reports and analytics
+- **[BG Reports Guide](addsol_bank_instruments/documentation/bg/bg_reports.md)** - Understanding BG reports and analytics
 
 ## Installation
 
