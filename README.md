@@ -6,6 +6,8 @@ A comprehensive ERPNext application for managing the complete lifecycle of Bank 
 
 The **Bank Instruments Management App** (`addsol_bank_instruments`) is designed for import-export companies, banks, trading houses, and manufacturing businesses that deal with international trade and financial instruments. It provides end-to-end management of both Import and Export LCs, as well as various types of Bank Guarantees, supporting multiple instrument types with comprehensive tracking and automation.
 
+![Bank Instruments Management](addsol_bank_instruments/documentation/images/addsol_bank_instruments.png)
+
 ### **Letter of Credit (LC) Module**
 
 **Key capabilities include:**
