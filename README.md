@@ -235,3 +235,6 @@ MIT License - Free for commercial and personal use
 *Innovative solutions for modern business challenges*
 
 Visit us at: [https://aitspl.com](https://aitspl.com)
+
+Commercial ERPNext customization and implementation services available.
+Contact: erpnext@aitspl.com
