@@ -1,7 +1,7 @@
 [project]
 name = "addsol_bank_instruments"
 authors = [
-    { name = "Addition Solutions", email = "contact@aitspl.com"}
+    { name = "Addition Solutions", email = "erpnext@aitspl.com"}
 ]
 description = "Management of Bank Instruments like LCs and BGs"
 requires-python = ">=3.10"

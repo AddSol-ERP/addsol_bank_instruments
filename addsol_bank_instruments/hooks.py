@@ -2,7 +2,7 @@ app_name = "addsol_bank_instruments"
 app_title = "Addsol Bank Instruments"
 app_publisher = "Addition Solutions"
 app_description = "Management of Bank Instruments like LCs and BGs"
-app_email = "contact@aitspl.com"
+app_email = "erpnext@aitspl.com"
 app_license = "mit"
 
 # Apps
